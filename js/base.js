@@ -40,7 +40,7 @@ function makeRequest() {
   var options = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost.freshservice-ams.com:6977/events",
+    "url": "https://alerts.freshgame.com/",
     "method": "POST",
     "headers": {
       "Authorization": "auth-key " + localStorage.getItem('auth-token'),
