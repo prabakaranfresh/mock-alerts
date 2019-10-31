@@ -1,0 +1,95 @@
+header {
+  padding: 20px 0;
+}
+
+#default-options {
+  padding-bottom: 15px;
+}
+
+.container {
+  width: 60%;
+  max-width: 550px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 30px 0;
+  margin: 20px auto; 
+}
+
+.container .fieldset {
+  padding-right: 60px;
+}
+
+
+.container label {
+  display: inline-block;
+  text-align: right;
+  width: 30%;
+}
+
+.container input, .container select {
+  width: 60%;
+  margin-left: 5px;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.container .btn {
+  width: 100px;
+  margin-top: 20px;
+}
+
+#alert-list {
+  position: absolute;
+  top: 150px;
+  right: 5%;
+  width: 25%;
+  height: calc(100% - 300px);
+  min-height: 400px;
+  overflow: auto;
+}
+
+#alert-list li {
+  border: 1px solid rgba(0,0,0,.125)
+  border-radius: 4px;
+  display: block; 
+  margin: 10px 0;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#alert-list li.ok {
+  background-color: #75C484;
+}
+
+#alert-list li.warning {
+  background-color: #2E8EFA;
+}
+
+#alert-list li.error {
+  background-color: #F8AB59;
+}
+
+#alert-list li.critical {
+  background-color: #F65050;
+}
+
+#alert-list li div {
+  display: inline-block;
+  margin: 5px 15px;
+}
+
+#result {
+  transition: 0.4s linear;
+}
+
+#result.error {
+  color: red;
+}
+
+#result.success {
+  color: green;
+}
+
+.soft-hide {
+  opacity: 0;
+}

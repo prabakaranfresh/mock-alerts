@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mock Alert for AMS</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <script src="js/constants.js"></script>
+  <script src="js/base.js"></script>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="text-center">
+  <header>
+    <h2>Mock Alerts post to Freshservice</h2>
+  </header>
+  <section id="default-options">
+    <label for="scenarios">Select Scenario</label>
+    <select id="scenarios">
+      <option> Select a Scenario</option>
+      <option value="scenario1">Alert 1 - warning</option>
+      <option value="scenario2">Alert 1 - error</option>
+      <option value="scenario3">Alert 1 - critical</option>
+      <option value="scenario4">Alert 2 - warning</option>
+      <option value="scenario5">Alert 2 - error</option>
+      <option value="scenario6">Alert 2 - ok</option>
+      <option value="scenario7">Alert 1 - ok</option>
+    </select>
+  </section>
+  <section class="auth">
+    
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#authModal">
+    Edit Authorisation
+  </button>
+  </section>
+  <section >
+    <div class="container">
+      <div class="fieldset">
+        <label for="hostname">hostname</label>
+        <input type="text" id="hostname" autocomplete="off" />
+      </div>
+      <div class="fieldset">
+        <label for="resource">resource</label>
+        <input type="text" id="resource"autocomplete="off" />
+      </div>
+      <div class="fieldset">
+        <label for="mo_name">mo_name</label>
+        <input type="text" id="mo_name"autocomplete="off" />
+      </div>
+      <div class="fieldset">
+        <label for="alert_group_key">alert_group_key</label>
+        <input type="text" id="alert_group_key"autocomplete="off" />
+      </div>
+
+      <div class="fieldset">
+        <label for="message">message</label>
+        <input type="text" id="message"autocomplete="off" />
+      </div>
+
+      <div class="fieldset">
+        <label for="description">description</label>
+        <input type="text" id="description"autocomplete="off" />
+      </div>
+
+      <div class="fieldset">
+        <label for="ip_address">ip_address</label>
+        <input type="text" id="ip_address"autocomplete="off" />
+      </div>
+
+      <div class="fieldset">
+        <label for="value">value</label>
+        <input type="text" id="value"autocomplete="off" />
+      </div>
+
+      <div class="fieldset">
+        <label for="status">status</label>
+        <select id="status">
+          <option value="critical">critical</option>
+          <option value="error">error</option>
+          <option value="warning">warning</option>
+          <option value="ok">ok</option>
+        </select>
+      </div>
+
+      <div class="bottom-button-container">
+        <button id="send" class="btn btn-secondary">Send</button>
+      </div>
+    </div>
+
+    <ul id="alert-list"></ul>
+  </section>
+  <section id="result" class="soft-hide">
+    <h3 id="resp-status"></h3>
+    <span id="resp-status-message"></span>
+  </section>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="authModal" tabindex="-1" role="dialog" aria-labelledby="authModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="authModalLabel">Authentication Params</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="fieldset">
+              <label for="auth-token">Authorisation</label>
+              <input type="text" id="auth-token" placeholder="token in Admin > Alert Management">
+            </div>
+            <div class="fieldset">
+                <label for="auth-token">Account-id</label>
+                <input type="text" id="account-id" placeholder="account ID in Admin > Alert Management">
+              </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="btn-save-auth" data-dismiss="modal">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
