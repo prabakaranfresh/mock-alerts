@@ -115,14 +115,16 @@
           </button>
         </div>
         <div class="modal-body">
-            <div class="fieldset">
-              <label for="auth-token">Authorisation</label>
-              <input type="text" id="auth-token" placeholder="token in Admin > Alert Management">
-            </div>
-            <div class="fieldset">
-                <label for="auth-token">Account-id</label>
-                <input type="text" id="account-id" placeholder="account ID in Admin > Alert Management">
-              </div>
+          <h6>Get Auth header details from your Freshservice Account</h6>
+          <p class="text-muted">Admin > Alert Management</p>
+          <div class="fieldset">
+            <label for="auth-token">Authorisation</label>
+            <input type="text" id="auth-token" placeholder="Eg. auth-key XXXXXXXXXXXXX">
+          </div>
+          <div class="fieldset">
+              <label for="auth-token">Account-id</label>
+              <input type="text" id="account-id" placeholder="account-id">
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" id="btn-save-auth" data-dismiss="modal">Save</button>

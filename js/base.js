@@ -40,10 +40,10 @@ function makeRequest() {
   var options = {
     "async": true,
     "crossDomain": true,
-    "url": "https://alerts.freshgame.com/",
+    "url": "https://alerts.freshgame.com/events",
     "method": "POST",
     "headers": {
-      "Authorization": "auth-key " + localStorage.getItem('auth-token'),
+      "Authorization": localStorage.getItem('auth-token'),
       "Content-Type": "application/json",
       "cache-control": "no-cache",
       "account-id": localStorage.getItem('account-id')
@@ -73,7 +73,7 @@ function displaySuccess() {
 function displayError(resp){
   console.log(resp);
   $('#result').removeClass().addClass("error");
-  displayResponse(resp.statusText, resp.responseJSON.errors);
+  displayResponse(resp.statusText, (resp.responseJSON)?resp.responseJSON.errors:'');
 }
 
 function displayResponse(title, message) {
