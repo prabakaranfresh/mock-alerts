@@ -1,25 +1,67 @@
 $(document).ready(function() {
-  $("#scenarios").on('change', fillInScenario);
+  $("#scenarios").on('change', fillInScenarioDefault);
+  $("#custom-scenarios-list").on('change', fillInScenarioCustom);
   $("#send").click(makeRequest);
   $("#btn-save-auth").click(saveAuth);
+  $("#btn-save-sceanrio").click(saveScenario);
+  $("#switch-scenario").click(swtichScenarios);
+
 
   $('#auth-token').val(localStorage.getItem('auth-token'));
   // $('#account-id').val(localStorage.getItem('account-id'));
 
   var alerList = $.parseJSON(localStorage.getItem('alert-list')) || [];
+  updateScenarioDropdown();
 
   alerList.map(function(alert) {
     addAlert(alert);
   });
 });
 
+function swtichScenarios() {
+  ($(this).find('span').text() === 'Custom') ? $(this).find('span').text('Default') : $(this).find('span').text('Custom');
+  $('.scenario-list-container').toggleClass('hide');
+}
+
 function saveAuth() {
   localStorage.setItem('auth-token', $('#auth-token').val());
   // localStorage.setItem('account-id', $('#account-id').val());
 }
 
-function fillInScenario() {
+function saveScenario() {
+  var scenarioName = $('#scenario-name').val();
+  if(scenarioName.length) {
+    var customScenarios = $.parseJSON(localStorage.getItem('custom-scenarios')) || {};
+    if(customScenarios[scenarioName] === undefined) {
+      customScenarios[scenarioName] = $.parseJSON(prepareData());
+      localStorage.setItem('custom-scenarios', JSON.stringify(customScenarios));
+      $('#scenario-name').val('');
+      updateScenarioDropdown();
+    }
+  }
+}
+
+function updateScenarioDropdown() {
+  custom_loaded_scenarios = $.parseJSON(localStorage.getItem('custom-scenarios')) || {};
+  var scenario;
+  $("#custom-scenarios-list option[value]").remove();
+  for(scenario in custom_loaded_scenarios) {
+    var option = $('<option />').val(scenario);
+    $(option).text(scenario);
+    $("#custom-scenarios-list").append(option);
+  }
+}
+
+function fillInScenarioDefault() {
   var curr_scenario = SCENARIOS[this.value];
+
+  for(var property in curr_scenario) {
+    $('#' + property).val(curr_scenario[property]);
+  }
+}
+
+function fillInScenarioCustom() {
+  var curr_scenario = custom_loaded_scenarios[this.value];
 
   for(var property in curr_scenario) {
     $('#' + property).val(curr_scenario[property]);

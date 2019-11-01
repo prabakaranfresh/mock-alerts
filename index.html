@@ -22,17 +22,26 @@
     <h2>Mock Alert post to <img src="images/freshservice.png" class="fs-icon" /></h2>
   </header>
   <section id="default-options">
-    <label for="scenarios">Select Scenario</label>
-    <select id="scenarios">
-      <option> Select a Scenario</option>
-      <option value="scenario1">Alert 1 - warning</option>
-      <option value="scenario2">Alert 1 - error</option>
-      <option value="scenario3">Alert 1 - critical</option>
-      <option value="scenario4">Alert 2 - warning</option>
-      <option value="scenario5">Alert 2 - error</option>
-      <option value="scenario6">Alert 2 - ok</option>
-      <option value="scenario7">Alert 1 - ok</option>
-    </select>
+    <div class="scenario-list-container">
+      <label for="scenarios">Select Scenario</label>
+      <select id="scenarios">
+        <option> Select a Scenario</option>
+        <option value="Alert 1 - warning">Alert 1 - warning</option>
+        <option value="Alert 1 - error">Alert 1 - error</option>
+        <option value="Alert 1 - critical">Alert 1 - critical</option>
+        <option value="Alert 2 - warning">Alert 2 - warning</option>
+        <option value="Alert 2 - error">Alert 2 - error</option>
+        <option value="Alert 2 - ok">Alert 2 - ok</option>
+        <option value="Alert 1 - ok">Alert 1 - ok</option>
+      </select>
+    </div>
+    <div class="scenario-list-container hide">
+        <label for="custom-scenarios-list">Select Scenario</label>
+        <select id="custom-scenarios-list">
+            <option>Select a Custom Scenario</option>
+        </select>
+      </div>
+    <button id="switch-scenario" class="btn">Show <span>Custom</span> Scenarios</button>
   </section>
   <section class="auth">
     
@@ -92,7 +101,8 @@
       </div>
 
       <div class="bottom-button-container">
-        <button id="send" class="btn btn-secondary">Send</button>
+        <button id="save" class="btn btn-secondary" data-toggle="modal" data-target="#saveScenarioModal">Save as Scenario</button>
+        <button id="send" class="btn btn-primary">Send</button>
       </div>
     </div>
 
@@ -128,6 +138,26 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" id="btn-save-auth" data-dismiss="modal">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="saveScenarioModal" tabindex="-1" role="dialog" aria-labelledby="saveScenarioLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="saveScenarioLabel">Authentication Params</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <label for="scenario-name">Scenario Name : </label>
+          <input type="text" id="scenario-name" />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="btn-save-sceanrio" data-dismiss="modal">Save</button>
         </div>
       </div>
     </div>

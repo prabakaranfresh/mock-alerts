@@ -2,8 +2,10 @@ const STATUS = ['critical', 'error', 'warning', 'ok'];
 
 var sent_alerts = [];
 
+var custom_loaded_scenarios = {};
+
 const SCENARIOS = {
-  scenario1: {
+  "Alert 1 - warning": {
     "alert_group_key": "alert-group-key11",
     "message": "Email-service in warning severity",
     "description": "Email-Service CPU utilization breached threshold limit of 60%",
@@ -16,7 +18,7 @@ const SCENARIOS = {
     "value": "60%",
     "additional_info": {}
   },
-  scenario2: {
+  "Alert 1 - error": {
     "alert_group_key": "alert-group-key11",
     "message": "Email-service in error severity",
     "description": "Email-Service CPU utilization breached threshold limit of 70%",
@@ -29,7 +31,7 @@ const SCENARIOS = {
     "value": "70%",
     "additional_info": {}
   },
-  scenario3: {
+  "Alert 1 - critical": {
     "alert_group_key": "alert-group-key11",
     "message": "Email-service in critical severity",
     "description": "Email-Service CPU utilization breached threshold limit of 90%",
@@ -42,7 +44,7 @@ const SCENARIOS = {
     "value": "90%",
     "additional_info": {}
   },
-  scenario4: {
+  "Alert 2 - warning": {
     "alert_group_key": "alert-group-key11",
     "message": "DB-server in warning severity",
     "description": "DB-Server has reached 60% disc utilization",
@@ -55,7 +57,7 @@ const SCENARIOS = {
     "value": "60%",
     "additional_info": {}
   },
-  scenario5: {
+  "Alert 2 - error": {
     "alert_group_key": "alert-group-key11",
     "message": "DB-server in error severity",
     "description": "DB-Server has reached 70% disc utilization",
@@ -68,7 +70,7 @@ const SCENARIOS = {
     "value": "70%",
     "additional_info": {}
   },
-  scenario6: {
+  "Alert 2 - ok": {
     "alert_group_key": "alert-group-key11",
     "message": "DB-server is ok",
     "description": "DB-Server has reached 30% disc utilization",
@@ -81,7 +83,7 @@ const SCENARIOS = {
     "value": "30%",
     "additional_info": {}
   },
-  scenario7: {
+  "Alert 1 - ok": {
     "alert_group_key": "alert-group-key11",
     "message": "Email-service is ok",
     "description": "Email-Service CPU utilization is under threshold limit",
