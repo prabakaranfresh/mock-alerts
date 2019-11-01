@@ -4,7 +4,7 @@ $(document).ready(function() {
   $("#btn-save-auth").click(saveAuth);
 
   $('#auth-token').val(localStorage.getItem('auth-token'));
-  $('#account-id').val(localStorage.getItem('account-id'));
+  // $('#account-id').val(localStorage.getItem('account-id'));
 
   var alerList = $.parseJSON(localStorage.getItem('alert-list')) || [];
 
@@ -15,7 +15,7 @@ $(document).ready(function() {
 
 function saveAuth() {
   localStorage.setItem('auth-token', $('#auth-token').val());
-  localStorage.setItem('account-id', $('#account-id').val());
+  // localStorage.setItem('account-id', $('#account-id').val());
 }
 
 function fillInScenario() {
@@ -46,7 +46,7 @@ function makeRequest() {
       "Authorization": localStorage.getItem('auth-token'),
       "Content-Type": "application/json",
       "cache-control": "no-cache",
-      "account-id": localStorage.getItem('account-id')
+      // "account-id": localStorage.getItem('account-id')
     },
     "processData": false,
     "data": prepareData(),
