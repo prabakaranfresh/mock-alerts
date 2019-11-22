@@ -6,12 +6,15 @@ $(document).ready(function() {
   $("#btn-save-sceanrio").click(saveScenario);
   $("#switch-scenario").click(swtichScenarios);
 
+  ams_url = localStorage.getItem('url') || ams_url;
 
   $('#auth-token').val(localStorage.getItem('auth-token'));
-  // $('#account-id').val(localStorage.getItem('account-id'));
+  $('#ams-url').val(ams_url);
 
   var alerList = $.parseJSON(localStorage.getItem('alert-list')) || [];
   updateScenarioDropdown();
+
+  
 
   alerList.map(function(alert) {
     addAlert(alert);
@@ -24,7 +27,9 @@ function swtichScenarios() {
 }
 
 function saveAuth() {
+  ams_url = $('#ams-url').val();
   localStorage.setItem('auth-token', $('#auth-token').val());
+  localStorage.setItem('url', ams_url);
   // localStorage.setItem('account-id', $('#account-id').val());
 }
 
@@ -82,7 +87,7 @@ function makeRequest() {
   var options = {
     "async": true,
     "crossDomain": true,
-    "url": "https://alerts.freshgame.com/events",
+    "url": ams_url,
     "method": "POST",
     "headers": {
       "Authorization": localStorage.getItem('auth-token'),

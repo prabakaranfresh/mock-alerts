@@ -4,6 +4,8 @@ var sent_alerts = [];
 
 var custom_loaded_scenarios = {};
 
+var ams_url = "https://alerts.freshgame.com/events";
+
 const SCENARIOS = {
   "Alert 1 - warning": {
     "alert_group_key": "alert-group-key11",
