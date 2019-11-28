@@ -1,4 +1,4 @@
-const STATUS = ['critical', 'error', 'warning', 'ok'];
+const SEVERITY = ['critical', 'error', 'warning', 'ok'];
 
 var sent_alerts = [];
 
@@ -15,7 +15,7 @@ const SCENARIOS = {
     "ip_address": "106.136.31.23",
     "resource": "CPU Utilization",
     "mo_name": "My Managed Object",
-    "status": "warning",
+    "severity": "warning",
     "occured_at": "2019-10-25T10:10:42Z",
     "value": "60%",
     "additional_info": {}
@@ -28,7 +28,7 @@ const SCENARIOS = {
     "ip_address": "106.136.31.23",
     "resource": "CPU Utilization",
     "mo_name": "My Managed Object",
-    "status": "error",
+    "severity": "error",
     "occured_at": "2019-10-25T10:10:42Z",
     "value": "70%",
     "additional_info": {}
@@ -41,7 +41,7 @@ const SCENARIOS = {
     "ip_address": "106.136.31.23",
     "resource": "CPU Utilization",
     "mo_name": "My Managed Object",
-    "status": "critical",
+    "severity": "critical",
     "occured_at": "2019-10-25T10:11:42Z",
     "value": "90%",
     "additional_info": {}
@@ -54,7 +54,7 @@ const SCENARIOS = {
     "ip_address": "106.136.31.86",
     "resource": "Disc space",
     "mo_name": "My Managed Object",
-    "status": "warning",
+    "severity": "warning",
     "occured_at": "2019-10-25T10:13:42Z",
     "value": "60%",
     "additional_info": {}
@@ -67,7 +67,7 @@ const SCENARIOS = {
     "ip_address": "106.136.31.86",
     "resource": "Disc space",
     "mo_name": "My Managed Object",
-    "status": "error",
+    "severity": "error",
     "occured_at": "2019-10-25T10:14:42Z",
     "value": "70%",
     "additional_info": {}
@@ -80,7 +80,7 @@ const SCENARIOS = {
     "ip_address": "106.136.31.86",
     "resource": "Disc space",
     "mo_name": "My Managed Object",
-    "status": "ok",
+    "severity": "ok",
     "occured_at": "2019-10-25T10:12:42Z",
     "value": "30%",
     "additional_info": {}
@@ -93,7 +93,7 @@ const SCENARIOS = {
     "ip_address": "106.136.31.23",
     "resource": "CPU Utilization",
     "mo_name": "My Managed Object",
-    "status": "ok",
+    "severity": "ok",
     "occured_at": "2019-10-25T10:12:42Z",
     "value": "40%",
     "additional_info": {}

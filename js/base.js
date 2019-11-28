@@ -124,12 +124,12 @@ function displayError(resp){
 }
 
 function displayResponse(title, message) {
-  $('#resp-status').text(title);
+  $('#resp-severity').text(title);
 
   if(message)
-    $('#resp-status-message').text(message);
+    $('#resp-severity-message').text(message);
   else 
-    $('#resp-status-message').text('');
+    $('#resp-severity-message').text('');
 
   setTimeout(function() {
     $('#result').removeClass().addClass("soft-hide");
@@ -138,8 +138,8 @@ function displayResponse(title, message) {
 
 function addAlert(data) {
   data = $.parseJSON(data);
-  var dispData = ['hostname', 'resource', 'status', 'alert_group_key'];
-  var li = $('<li />').addClass('card ' + data.status);
+  var dispData = ['hostname', 'resource', 'severity', 'alert_group_key'];
+  var li = $('<li />').addClass('card ' + data.severity);
 
   var renderVal = function(idKey) { 
     return ('<b>' + data[idKey] + '</b>');
