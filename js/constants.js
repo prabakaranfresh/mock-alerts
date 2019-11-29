@@ -18,7 +18,8 @@ const SCENARIOS = {
     "severity": "warning",
     "occured_at": "2019-10-25T10:10:42Z",
     "value": "60%",
-    "additional_info": {}
+    "additional_info": "",
+    "tags": ""
   },
   "Alert 1 - error": {
     "alert_group_key": "alert-group-key11",
@@ -31,7 +32,8 @@ const SCENARIOS = {
     "severity": "error",
     "occured_at": "2019-10-25T10:10:42Z",
     "value": "70%",
-    "additional_info": {}
+    "additional_info": "",
+    "tags": ""
   },
   "Alert 1 - critical": {
     "alert_group_key": "alert-group-key11",
@@ -44,7 +46,8 @@ const SCENARIOS = {
     "severity": "critical",
     "occured_at": "2019-10-25T10:11:42Z",
     "value": "90%",
-    "additional_info": {}
+    "additional_info": "",
+    "tags": ""
   },
   "Alert 2 - warning": {
     "alert_group_key": "alert-group-key11",
@@ -57,7 +60,8 @@ const SCENARIOS = {
     "severity": "warning",
     "occured_at": "2019-10-25T10:13:42Z",
     "value": "60%",
-    "additional_info": {}
+    "additional_info": "",
+    "tags": ""
   },
   "Alert 2 - error": {
     "alert_group_key": "alert-group-key11",
@@ -70,7 +74,8 @@ const SCENARIOS = {
     "severity": "error",
     "occured_at": "2019-10-25T10:14:42Z",
     "value": "70%",
-    "additional_info": {}
+    "additional_info": "",
+    "tags": ""
   },
   "Alert 2 - ok": {
     "alert_group_key": "alert-group-key11",
@@ -83,7 +88,8 @@ const SCENARIOS = {
     "severity": "ok",
     "occured_at": "2019-10-25T10:12:42Z",
     "value": "30%",
-    "additional_info": {}
+    "additional_info": "",
+    "tags": ""
   },
   "Alert 1 - ok": {
     "alert_group_key": "alert-group-key11",
@@ -96,6 +102,7 @@ const SCENARIOS = {
     "severity": "ok",
     "occured_at": "2019-10-25T10:12:42Z",
     "value": "40%",
-    "additional_info": {}
+    "additional_info": "",
+    "tags": ""
   }
 }

@@ -27,13 +27,25 @@ button#switch-scenario {
   display: inline-block;
 }
 
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  max-height: 600px;
+}
+
+.page-wrapper section:first-child {
+  flex: 2;
+}
+
 .container {
-  width: 60%;
-  max-width: 550px;
+  /* width: 60%; */
+  /* max-width: 550px; */
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 30px 0;
-  margin: 20px auto; 
+  /* margin: 20px auto;  */
+  margin: 0 20px;
+  flex: 4;
 }
 
 .container .fieldset {
@@ -62,11 +74,13 @@ button#switch-scenario {
 }
 
 #alert-list {
-  position: absolute;
+  /* position: absolute;
   top: 150px;
   right: 5%;
   width: 25%;
-  height: calc(100% - 200px);
+  height: calc(100% - 200px); */
+  flex: 2;
+  max-height: 550px;
   min-height: 400px;
   overflow: auto;
   padding: 0 20px;
@@ -113,6 +127,7 @@ button#switch-scenario {
 }
 
 #result {
+  margin-top: 24px;
   transition: 0.4s linear;
 }
 

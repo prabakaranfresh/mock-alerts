@@ -53,6 +53,12 @@
           Edit Authorisation
         </button>
       </div>
+
+
+      <div id="result" class="soft-hide">
+        <h3 id="resp-severity"></h3>
+        <span id="resp-severity-message"></span>
+      </div>
     </section>
 
     <section class="container">
@@ -103,6 +109,16 @@
         </select>
       </div>
 
+      <div class="fieldset">
+        <label for="tags">tags</label>
+        <input type="text" id="tags" autocomplete="off" />
+      </div>
+
+      <div class="fieldset">
+        <label for="additional_info">additional_info</label>
+        <input type="text" id="additional_info" autocomplete="off" />
+      </div>
+
       <div class="bottom-button-container">
         <button id="save" class="btn btn-secondary" data-toggle="modal" data-target="#saveScenarioModal">Save as Scenario</button>
         <button id="send" class="btn btn-primary">Send</button>
@@ -112,10 +128,6 @@
     <ul id="alert-list"></ul>
 
   </section>
-    <section id="result" class="soft-hide">
-      <h3 id="resp-severity"></h3>
-      <span id="resp-severity-message"></span>
-    </section>
 
   
   <!-- Modal -->
